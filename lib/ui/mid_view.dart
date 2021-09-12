@@ -30,6 +30,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
               fontSize: 15,
             ),
           ),
+
           SizedBox(
             height: 10,
           ),
