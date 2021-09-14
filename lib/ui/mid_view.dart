@@ -27,7 +27,7 @@ Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
           Text(
             "${Util.getFormattedDate(formattedDate)}",
             style: TextStyle(
-              fontSize: 15,
+              fontSize: 16,
             ),
           ),
           SizedBox(
