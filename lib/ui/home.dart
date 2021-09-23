@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/model/weather_forecast_model.dart';
 import 'package:weather_app/network/network.dart';
+import 'package:weather_app/ui/bottom_view.dart';
 
 import 'mid_view.dart';
 
@@ -40,6 +41,7 @@ class _HomeViewState extends State<HomeView> {
                     return Column(
                       children: [
                         midView(snapshot),
+                        bottomView(snapshot, context)
                       ],
                     );
                   }
@@ -57,20 +59,23 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget textFieldView() {
-    return Container(
-      child: TextField(
-        decoration: InputDecoration(
-            hintText: "Enter city name",
-            prefixIcon: Icon(Icons.search),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-            contentPadding: EdgeInsets.all(6)),
-        onSubmitted: (value) {
-          setState(() {
-            print(value);
-            _cityName = value;
-            forecastObject = getWeatherData(cityName: _cityName);
-          });
-        },
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: TextField(
+          decoration: InputDecoration(
+              hintText: "Enter city name",
+              prefixIcon: Icon(Icons.search),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              contentPadding: EdgeInsets.all(6)),
+          onSubmitted: (value) {
+            setState(() {
+              print(value);
+              _cityName = value;
+              forecastObject = getWeatherData(cityName: _cityName);
+            });
+          },
+        ),
       ),
     );
   }
