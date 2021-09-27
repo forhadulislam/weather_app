@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
                     return Column(
                       children: [
                         midView(snapshot),
-                        bottomView(snapshot, context)
+                        BottomView(snapshot: snapshot)
                       ],
                     );
                   }

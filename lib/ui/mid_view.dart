@@ -5,6 +5,8 @@ import 'package:weather_app/model/weather_forecast_model.dart';
 import 'package:weather_app/util/convert_icon.dart';
 import 'package:weather_app/util/forecast_util.dart';
 
+
+
 Widget midView(AsyncSnapshot<WeatherForecastModel> snapshot) {
   var forecastList = snapshot.data.listData;
   var city = snapshot.data.city.name;
