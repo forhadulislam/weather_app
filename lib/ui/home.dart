@@ -40,7 +40,7 @@ class _HomeViewState extends State<HomeView> {
                   if (snapshot.hasData) {
                     return Column(
                       children: [
-                        midView(snapshot),
+                        MidView(snapshot: snapshot),
                         BottomView(snapshot: snapshot)
                       ],
                     );
